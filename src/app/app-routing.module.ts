@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ConfigComponent } from './config/config.component';
 
-export const routes: Routes = [ 
+  const routes: Routes = [ 
   { 
-    
-    path: 'config', 
+    path: 'config', component: ConfigComponent }
+    /*path: 'config', 
     loadChildren: () => import('./config/config.module').then(m => m.ConfigModule) 
   
   },
@@ -14,10 +15,11 @@ export const routes: Routes = [
     path: '', 
     redirectTo: '',
     pathMatch: 'full'
-  }
+  }*/
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

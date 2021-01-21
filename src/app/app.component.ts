@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing.module';
 import { PoMenuItem } from '@po-ui/ng-components';
 
 @Component({
@@ -8,6 +8,8 @@ import { PoMenuItem } from '@po-ui/ng-components';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor( private router: Router ) { }
 
   readonly menus: Array<PoMenuItem> = [
     //{ label: 'Home', action: this.onClick.bind(this) }
@@ -19,11 +21,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.restore();
+    //this.restore();
   }
 
   restore() {
       //alert('Só Jesus salva!!!');
+      this.router.navigate([ '/config' ])
   }
 
 }
