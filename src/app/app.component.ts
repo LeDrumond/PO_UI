@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { Router } from '@angular/router';
 import { PoMenuItem } from '@po-ui/ng-components';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
 
   readonly menus: Array<PoMenuItem> = [
     //{ label: 'Home', action: this.onClick.bind(this) }
-    { label: 'Início', link: '/' }, { label: 'Config', link: 'config' }
+    { label: 'Início', link: 'home' }, { label: 'Config', link: 'config' }
   ];
 
   private onClick() {
@@ -26,7 +26,7 @@ export class AppComponent {
 
   restore() {
       //alert('Só Jesus salva!!!');
-      this.router.navigate([ '/config' ])
+     // this.router.navigate([ '/config' ])
   }
 
 }
